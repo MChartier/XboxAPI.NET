@@ -2,6 +2,7 @@
 using RestSharp;
 using System.Net;
 using System.Threading.Tasks;
+using XboxAPI.NET.XboxAPIRestClient;
 using XboxAPIClient.Models.V2;
 
 namespace XboxAPI.NET
@@ -13,11 +14,13 @@ namespace XboxAPI.NET
     {
         // We will retry in case where Xbox API returns a 502 (BadGateway) response
         // These happen indeterminately and should be treated as retryable
-        private const int MAX_ATTEMPTS = 2;
+        private const int MaxAttempts = 2;
 
         private const string baseUrl = "https://xboxapi.com/";
 
-        private string apiKey;
+        private readonly IXboxAPIV2RestClient xboxApiRestClient;
+
+        private readonly string apiKey;
 
         public XboxAPI(string apiKey)
         {
@@ -76,7 +79,7 @@ namespace XboxAPI.NET
         /// <returns>The deserialized response object.</returns>
         private async Task<XboxAPIResponse<T>> executeAndDeserialize<T>(RestRequest request) where T : class
         {
-            for (int attemptedRequestCount = 1; attemptedRequestCount <= MAX_ATTEMPTS; attemptedRequestCount++)
+            for (int attemptedRequestCount = 1; attemptedRequestCount <= MaxAttempts; attemptedRequestCount++)
             {
                 RestResponse restResponse = await execute(request);
                 if (restResponse.IsSuccessful)
@@ -98,7 +101,7 @@ namespace XboxAPI.NET
             }
 
             // If BadGateway retries are exhausted, return failure response
-            return new XboxAPIResponse<T>(MAX_ATTEMPTS, null);
+            return new XboxAPIResponse<T>(MaxAttempts, null);
         }
     }
 }
