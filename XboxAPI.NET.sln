@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XboxAPI.NET", "XboxAPI.NET.csproj", "{3B29E624-158F-4390-AF66-FEA37644F6E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XboxAPI.NET", "XboxAPI.NET\XboxAPI.NET.csproj", "{0EC06EB8-98FB-42D8-9CA6-FDBC935AB39D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XboxAPI.NET.Tests", "XboxAPI.NET.Tests\XboxAPI.NET.Tests\XboxAPI.NET.Tests.csproj", "{3DA93B2B-218F-40F1-8C0F-737DA95C48E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B29E624-158F-4390-AF66-FEA37644F6E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B29E624-158F-4390-AF66-FEA37644F6E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B29E624-158F-4390-AF66-FEA37644F6E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B29E624-158F-4390-AF66-FEA37644F6E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC06EB8-98FB-42D8-9CA6-FDBC935AB39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC06EB8-98FB-42D8-9CA6-FDBC935AB39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC06EB8-98FB-42D8-9CA6-FDBC935AB39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC06EB8-98FB-42D8-9CA6-FDBC935AB39D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA93B2B-218F-40F1-8C0F-737DA95C48E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA93B2B-218F-40F1-8C0F-737DA95C48E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA93B2B-218F-40F1-8C0F-737DA95C48E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA93B2B-218F-40F1-8C0F-737DA95C48E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

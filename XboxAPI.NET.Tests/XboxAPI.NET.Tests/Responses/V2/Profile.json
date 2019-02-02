@@ -1,0 +1,31 @@
+﻿{
+  "userKey": null,
+  "administeredConsoles": [],
+  "dateOfBirth": "2001-11-15T00:00:00",
+  "email": "xbox@xboxapi.com",
+  "firstName": "Larry",
+  "gamerTag": "Major Nelson",
+  "homeAddressInfo": {
+    "street1": null,
+    "street2": null,
+    "city": null,
+    "state": null,
+    "postalCode": null,
+    "country": "US"
+  },
+  "homeConsole": null,
+  "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net:443/cms/api/am/imageFileData/RW4ESm?ver=c63e&_=5",
+  "isAdult": true,
+  "lastName": "Hyrb",
+  "legalCountry": "US",
+  "locale": "en-US",
+  "msftOptin": false,
+  "ownerHash": null,
+  "ownerXuid": 2584878536129841,
+  "midasConsole": null,
+  "partnerOptin": false,
+  "userHash": "312840330124081665",
+  "userXuid": 2584878536129841,
+  "touAcceptanceDate": "2013-11-25T00:00:00",
+  "gamerTagChangeReason": null
+}

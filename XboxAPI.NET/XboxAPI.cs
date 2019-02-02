@@ -6,18 +6,6 @@ using XboxAPIClient.Models.V2;
 
 namespace XboxAPI.NET
 {
-    public class XboxAPIResponse<T> where T : class 
-    {
-        public int AttemptedRequests { get; set; }
-        public T ResponseObject { get; set; }
-
-        public XboxAPIResponse(int attemptedRequests, T responseObject)
-        {
-            this.AttemptedRequests = attemptedRequests;
-            this.ResponseObject = responseObject;
-        }
-    }
-
     /// <summary>
     /// Client wrapper for the unofficial XboxAPI hosted at http://xboxapi.com/.
     /// </summary>
@@ -35,8 +23,6 @@ namespace XboxAPI.NET
         {
             this.apiKey = apiKey;
         }
-
-        #region Public Methods
 
         public Task<XboxAPIResponse<GamertagXuid>> GamertagXuid(string gamertag)
         {
@@ -65,10 +51,6 @@ namespace XboxAPI.NET
             request.AddUrlSegment("xuid", xuid);
             return executeAndDeserialize<XuidGamertag>(request);
         }
-
-        #endregion Public Methods
-
-        #region Private Methods
 
         /// <summary>
         /// Executes the given request using this object's API key.
@@ -118,7 +100,5 @@ namespace XboxAPI.NET
             // If BadGateway retries are exhausted, return failure response
             return new XboxAPIResponse<T>(MAX_ATTEMPTS, null);
         }
-
-        #endregion Private Methods
     }
 }
