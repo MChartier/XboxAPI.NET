@@ -22,6 +22,13 @@ namespace XboxAPI.NET.XboxAPIRestClient
             return await executeRequest(request);
         }
 
+        public async Task<string> Profile(string xuid)
+        {
+            RestRequest request = new RestRequest("/v2/{xuid}/profile");
+            request.AddUrlSegment("xuid", xuid);
+            return await executeRequest(request);
+        }
+
         public async Task<string> Xbox360Games(string xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/xbox360games");

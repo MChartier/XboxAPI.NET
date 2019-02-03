@@ -10,7 +10,7 @@ namespace XboxAPI.NET.XboxAPIRestClient
         Task<string> GamertagXuid(string gamertag);
         //Task<string> GameStats();
         //Task<string> Presence();
-        //Task<string> Profile();
+        Task<string> Profile(string xuid);
         //Task<string> Xbox360GameAchievements();
         Task<string> Xbox360Games(string xuid);
         //Task<string> XboxOneGameAchievements();
