@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace XboxAPI.NET.XboxAPIRestClient
 {
-    public class XboxAPIV2RestClient : IXboxAPIV2RestClient
+    internal class XboxAPIV2RestClient : IXboxAPIV2RestClient
     {
         private const string XboxApiBaseUrl = "https://www.xboxapi.com";
 
@@ -15,49 +15,48 @@ namespace XboxAPI.NET.XboxAPIRestClient
             this.restClient.AddDefaultHeader("X-AUTH", apiKey);
         }
 
-        public async Task<string> GamertagXuid(string gamertag)
+        public async Task<XboxAPIRestResponse> GamertagXuid(string gamertag)
         {
             RestRequest request = new RestRequest("/v2/xuid/{gamertag}");
             request.AddUrlSegment("gamertag", gamertag);
             return await executeRequest(request);
         }
 
-        public async Task<string> Profile(string xuid)
+        public async Task<XboxAPIRestResponse> Profile(string xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/profile");
             request.AddUrlSegment("xuid", xuid);
             return await executeRequest(request);
         }
 
-        public async Task<string> Xbox360Games(string xuid)
+        public async Task<XboxAPIRestResponse> Xbox360Games(string xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/xbox360games");
             request.AddUrlSegment("xuid", xuid);
             return await executeRequest(request);
         }
 
-        public async Task<string> XboxOneGames(string xuid)
+        public async Task<XboxAPIRestResponse> XboxOneGames(string xuid)
         {
             RestRequest request = new RestRequest("/v2/{xuid}/xboxonegames");
             request.AddUrlSegment("xuid", xuid);
             return await executeRequest(request);
         }
 
-        public async Task<string> XuidGamertag(string xuid)
+        public async Task<XboxAPIRestResponse> XuidGamertag(string xuid)
         {
             RestRequest request = new RestRequest("/v2/gamertag/{xuid}");
             request.AddUrlSegment("xuid", xuid);
             return await executeRequest(request);
         }
 
-        private async Task<string> executeRequest(RestRequest request)
+        private async Task<XboxAPIRestResponse> executeRequest(RestRequest request)
         {
             TaskCompletionSource<IRestResponse> taskCompletion = new TaskCompletionSource<IRestResponse>();
 
             RestRequestAsyncHandle handle = restClient.ExecuteAsync(request, r => taskCompletion.SetResult(r));
-
             IRestResponse response = (await taskCompletion.Task);
-            return response.Content;
+            return new XboxAPIRestResponse(response.StatusCode, response.Content);
         }
     }
 }

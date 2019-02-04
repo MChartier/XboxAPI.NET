@@ -17,4 +17,28 @@
     <ProjectReference Include="..\..\XboxAPI.NET\XboxAPI.NET.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Responses\V2\AccountXuid\Success.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Responses\V2\GamertagXuid\NotFound.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Responses\V2\GamertagXuid\Success.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Responses\V2\Profile\Success.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Responses\V2\Xbox360Games\Success.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Responses\V2\XboxOneGames\Success.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Responses\V2\XuidGamertag\Success.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
