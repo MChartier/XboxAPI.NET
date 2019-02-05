@@ -3,7 +3,7 @@ Unofficial .NET client for XboxAPI. (https://xboxapi.com/)
 
 ## Build
 
-XboxAPI.NET targets .NET Standard 2.0, making it compatible with projects built using .NET Core 2.0+ or .NET Framework 4.6.1+1.
+XboxAPI.NET targets .NET Standard 2.0, making it compatible with projects built using .NET Core 2.0+ or .NET Framework 4.6.1+.
 You can build XboxAPI.NET by opening the solution in Visual Studio or from the command line using the 'dotnet build' command.
 
 ## XboxAPI Class
