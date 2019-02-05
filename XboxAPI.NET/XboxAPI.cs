@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using XboxAPI.NET.Models.V2;
@@ -62,6 +63,14 @@ namespace XboxAPI.NET
         public async Task<string> GamertagXuid(string gamertag)
         {
             XboxAPIRestResponse response = await xboxApiRestClient.GamertagXuid(gamertag);
+
+            // Special case response where XUID is not found because it is returned in an inconsistent object format
+            if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                // XUID not found
+                return null;
+            }
+
             return response.Content;
         }
 
@@ -107,10 +116,19 @@ namespace XboxAPI.NET
             return JsonConvert.DeserializeObject<XboxOneGames>(response.Content);
         }
 
-        public async Task<XuidGamertag> XuidGamertag(string xuid)
+        public async Task<string> XuidGamertag(string xuid)
         {
             XboxAPIRestResponse response = await xboxApiRestClient.XuidGamertag(xuid);
-            return JsonConvert.DeserializeObject<XuidGamertag>(response.Content);
+
+            // Special case response where Gamertag is not found for given XUID because the API will just return an
+            // empty response
+            if (response.Content == string.Empty)
+            {
+                // Gamertag not found
+                return null;
+            }
+
+            return response.Content;
         }
     }
 }

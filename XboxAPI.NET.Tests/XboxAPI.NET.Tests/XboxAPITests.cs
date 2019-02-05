@@ -60,7 +60,17 @@ namespace XboxAPI.NET.Tests
         }
 
         [TestMethod]
-        public void GamertagXuid()
+        public void GamertagXuid_NotFound()
+        {
+            mockXboxApiRestClient.Setup(x => x.GamertagXuid(Gamertag))
+                .Returns(readTestResponse("GamertagXuid/NotFound.json", HttpStatusCode.NotFound));
+
+            string result = xboxAPI.GamertagXuid(Gamertag).GetAwaiter().GetResult();
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void GamertagXuid_Success()
         {
             mockXboxApiRestClient.Setup(x => x.GamertagXuid(Gamertag))
                 .Returns(readTestResponse("GamertagXuid/Success.json"));
@@ -139,11 +149,32 @@ namespace XboxAPI.NET.Tests
             Assert.IsNotNull(result);
         }
 
-        private Task<XboxAPIRestResponse> readTestResponse(string fileName)
+        [TestMethod]
+        public void XuidGamertag_NotFound()
+        {
+            mockXboxApiRestClient.Setup(x => x.XuidGamertag(Xuid.ToString()))
+                .Returns(readTestResponse("XuidGamertag/NotFound.json"));
+
+            string result = xboxAPI.XuidGamertag(Xuid.ToString()).GetAwaiter().GetResult();
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void XuidGamertag_Success()
+        {
+            mockXboxApiRestClient.Setup(x => x.XuidGamertag(Xuid.ToString()))
+                .Returns(readTestResponse("XuidGamertag/Success.json"));
+
+            string result = xboxAPI.XuidGamertag(Xuid.ToString()).GetAwaiter().GetResult();
+            Assert.AreEqual(Gamertag, result);
+        }
+
+        private Task<XboxAPIRestResponse> readTestResponse(string fileName, 
+            HttpStatusCode statusCode = HttpStatusCode.OK)
         {
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Responses\V2", fileName);
             string content = File.ReadAllText(filePath);
-            return Task.FromResult(new XboxAPIRestResponse(HttpStatusCode.OK, content));
+            return Task.FromResult(new XboxAPIRestResponse(statusCode, content));
         }
     }
 }

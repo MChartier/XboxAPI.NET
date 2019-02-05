@@ -54,6 +54,9 @@
     <None Update="Responses\V2\XboxOneGames\Success.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Responses\V2\XuidGamertag\NotFound.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Responses\V2\XuidGamertag\Success.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
