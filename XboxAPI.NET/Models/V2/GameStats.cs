@@ -7,6 +7,8 @@ namespace XboxAPIClient.Models.V2
         public int Ordinal { get; set; }
         public string SortOrder { get; set; }
         public string DisplayName { get; set; }
+        public string DisplayFormat { get; set; }
+        public string DisplaySemantic { get; set; }
     }
 
     public class Properties
@@ -46,7 +48,7 @@ namespace XboxAPIClient.Models.V2
         public int titleid { get; set; }
         public string name { get; set; }
         public string type { get; set; }
-        public List<object> properties { get; set; }
+        public object properties { get; set; }
     }
 
     public class Statlistscollection2
