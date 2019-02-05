@@ -15,10 +15,45 @@ namespace XboxAPI.NET.XboxAPIRestClient
             this.restClient.AddDefaultHeader("X-AUTH", apiKey);
         }
 
+        public async Task<XboxAPIRestResponse> AccountProfile()
+        {
+            RestRequest request = new RestRequest("/v2/profile");
+            return await executeRequest(request);
+        }
+
+        public async Task<XboxAPIRestResponse> AccountXuid()
+        {
+            RestRequest request = new RestRequest("/v2/accountXuid");
+            return await executeRequest(request);
+        }
+
+
+        public async Task<XboxAPIRestResponse> Gamercard(string xuid)
+        {
+            RestRequest request = new RestRequest("/v2/{xuid}/gamercard");
+            request.AddUrlSegment("xuid", xuid);
+            return await executeRequest(request);
+        }
+
         public async Task<XboxAPIRestResponse> GamertagXuid(string gamertag)
         {
             RestRequest request = new RestRequest("/v2/xuid/{gamertag}");
             request.AddUrlSegment("gamertag", gamertag);
+            return await executeRequest(request);
+        }
+
+        public async Task<XboxAPIRestResponse> GameStats(string xuid, string titleId)
+        {
+            RestRequest request = new RestRequest("/v2/{xuid}/game-stats/{titleId}");
+            request.AddUrlSegment("xuid", xuid);
+            request.AddUrlSegment("titleId", titleId);
+            return await executeRequest(request);
+        }
+
+        public async Task<XboxAPIRestResponse> Presence(string xuid)
+        {
+            RestRequest request = new RestRequest("/v2/{xuid}/presence");
+            request.AddUrlSegment("xuid", xuid);
             return await executeRequest(request);
         }
 
@@ -33,6 +68,14 @@ namespace XboxAPI.NET.XboxAPIRestClient
         {
             RestRequest request = new RestRequest("/v2/{xuid}/xbox360games");
             request.AddUrlSegment("xuid", xuid);
+            return await executeRequest(request);
+        }
+
+        public async Task<XboxAPIRestResponse> XboxGameAchievements(string xuid, string titleId)
+        {
+            RestRequest request = new RestRequest("/v2/{xuid}/achievements/{titleId}");
+            request.AddUrlSegment("xuid", xuid);
+            request.AddUrlSegment("titleId", titleId);
             return await executeRequest(request);
         }
 

@@ -1,21 +1,29 @@
-﻿using System.Net;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace XboxAPI.NET.XboxAPIRestClient
 {
     internal interface IXboxAPIV2RestClient
     {
-        //Task<string> AccountProfile();
-        //Task<string> AccountXuid();
-        //Task<string> Gamercard();
+        Task<XboxAPIRestResponse> AccountProfile();
+
+        Task<XboxAPIRestResponse> AccountXuid();
+
+        Task<XboxAPIRestResponse> Gamercard(string xuid);
+
         Task<XboxAPIRestResponse> GamertagXuid(string gamertag);
-        //Task<string> GameStats();
-        //Task<string> Presence();
+
+        Task<XboxAPIRestResponse> GameStats(string xuid, string titleId);
+
+        Task<XboxAPIRestResponse> Presence(string xuid);
+
         Task<XboxAPIRestResponse> Profile(string xuid);
-        //Task<string> Xbox360GameAchievements();
+
         Task<XboxAPIRestResponse> Xbox360Games(string xuid);
-        //Task<string> XboxOneGameAchievements();
+
+        Task<XboxAPIRestResponse> XboxGameAchievements(string xuid, string titleId);
+
         Task<XboxAPIRestResponse> XboxOneGames(string xuid);
+
         Task<XboxAPIRestResponse> XuidGamertag(string xuid);
     }
 }
