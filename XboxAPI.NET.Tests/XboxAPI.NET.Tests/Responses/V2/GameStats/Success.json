@@ -1,0 +1,97 @@
+{
+  "groups": [
+    {
+      "name": "Hero",
+      "titleid": 219630713,
+      "statlistscollection": [
+        {
+          "arrangebyfield": "xuid",
+          "arrangebyfieldid": 2584878536129841,
+          "stats": [
+            {
+              "groupproperties": {
+                "Ordinal": 0,
+                "SortOrder": "Descending",
+                "DisplayName": "Matchmaking Victories",
+                "DisplayFormat": "Integer",
+                "DisplaySemantic": "Cumulative"
+              },
+              "xuid": 2584878536129841,
+              "scid": "1370999b-fca2-4c53-8ec5-73493bcb67e5",
+              "name": "MultiplayerGameComplete.IsMatchmaking.1.Won.1",
+              "type": "Integer",
+              "value": 247,
+              "properties": {
+                "DisplayName": "Matchmaking Victories"
+              }
+            },
+            {
+              "groupproperties": {
+                "Ordinal": 1,
+                "SortOrder": "Descending",
+                "DisplayName": "Multiplayer Spartans Killed",
+                "DisplayFormat": "Integer",
+                "DisplaySemantic": "Cumulative"
+              },
+              "xuid": 2584878536129841,
+              "scid": "1370999b-fca2-4c53-8ec5-73493bcb67e5",
+              "name": "PlatformStatsImpulse.Impulse.SpartanKill",
+              "type": "Integer",
+              "value": 3073,
+              "properties": {
+                "DisplayName": "Multiplayer Spartans Killed"
+              }
+            },
+            {
+              "groupproperties": {
+                "Ordinal": 2,
+                "SortOrder": "Descending",
+                "DisplayName": "Warzone Bosses Killed",
+                "DisplayFormat": "Integer",
+                "DisplaySemantic": "Cumulative"
+              },
+              "xuid": 2584878536129841,
+              "scid": "1370999b-fca2-4c53-8ec5-73493bcb67e5",
+              "name": "PlatformStatsImpulse.Impulse.BossKill",
+              "type": "Integer",
+              "value": 53,
+              "properties": {
+                "DisplayName": "Warzone Bosses Killed"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "statlistscollection": [
+    {
+      "arrangebyfield": "xuid",
+      "arrangebyfieldid": 2584878536129841,
+      "stats": [
+        {
+          "groupproperties": [],
+          "xuid": 2584878536129841,
+          "scid": "1370999b-fca2-4c53-8ec5-73493bcb67e5",
+          "titleid": 219630713,
+          "name": "MinutesPlayed",
+          "type": "Integer",
+          "value": 10622,
+          "properties": []
+        },
+        {
+          "groupproperties": [],
+          "xuid": 2584878536129841,
+          "scid": "1370999b-fca2-4c53-8ec5-73493bcb67e5",
+          "titleid": 219630713,
+          "name": "GameProgress",
+          "type": "Double",
+          "value": 100,
+          "properties": {
+            "DisplayDescription": "Completion Percentage"
+          }
+        }
+      ]
+    }
+  ]
+}
