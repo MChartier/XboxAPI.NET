@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XboxAPIClient.Models.V2
+namespace XboxAPI.NET.Models.V2
 {
     public class XboxOneTitle
     {

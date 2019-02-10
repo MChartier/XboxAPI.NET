@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using XboxAPI.NET.Models.V2;
 using XboxAPI.NET.XboxAPIRestClient;
-using XboxAPIClient.Models.V2;
+using XboxAPI.NET.Models.V2;
 
 namespace XboxAPI.NET.Tests
 {
@@ -20,14 +20,14 @@ namespace XboxAPI.NET.Tests
         private const string XboxOneGameTitleId = "219630713"; // Halo 5: Guardians
 
         private Mock<IXboxAPIV2RestClient> mockXboxApiRestClient;
-        private XboxAPI xboxAPI;
+        private XboxAPIClient xboxAPI;
 
         [TestInitialize]
         public void TestInitialize()
         {
             // Setup mock rest client
             mockXboxApiRestClient = new Mock<IXboxAPIV2RestClient>();
-            this.xboxAPI = new XboxAPI(apiKey: null, xboxApiRestClient: mockXboxApiRestClient.Object);
+            this.xboxAPI = new XboxAPIClient(apiKey: null, xboxApiRestClient: mockXboxApiRestClient.Object);
         }
 
         [TestMethod]

@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using XboxAPI.NET.Models.V2;
 using XboxAPI.NET.XboxAPIRestClient;
-using XboxAPIClient.Models.V2;
 
 // Make internals visible to unit test project
 [assembly: InternalsVisibleTo("XboxAPI.NET.Tests")]
@@ -15,7 +14,7 @@ namespace XboxAPI.NET
     /// <summary>
     /// Client wrapper for the unofficial XboxAPI hosted at http://xboxapi.com/.
     /// </summary>
-    public class XboxAPI
+    public class XboxAPIClient
     {
         private readonly string apiKey;
         private readonly IXboxAPIV2RestClient xboxApiRestClient;
@@ -24,7 +23,7 @@ namespace XboxAPI.NET
         /// 
         /// </summary>
         /// <param name="apiKey"></param>
-        public XboxAPI(string apiKey)
+        public XboxAPIClient(string apiKey)
         {
             this.apiKey = apiKey;
             this.xboxApiRestClient = new XboxAPIV2RestClient(apiKey);
@@ -36,7 +35,7 @@ namespace XboxAPI.NET
         /// </summary>
         /// <param name="apiKey"></param>
         /// <param name="xboxApiRestClient"></param>
-        internal XboxAPI(string apiKey, IXboxAPIV2RestClient xboxApiRestClient = null)
+        internal XboxAPIClient(string apiKey, IXboxAPIV2RestClient xboxApiRestClient = null)
         {
             this.apiKey = apiKey;
             this.xboxApiRestClient = xboxApiRestClient ?? new XboxAPIV2RestClient(apiKey);
