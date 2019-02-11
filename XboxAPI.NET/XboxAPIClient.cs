@@ -70,7 +70,7 @@ namespace XboxAPI.NET
                 return null;
             }
 
-            return response.Content;
+            return JsonConvert.DeserializeObject<GamertagXuid>(response.Content).xuid;
         }
 
         public async Task<GameStats> GameStats(string xuid, string titleId)
@@ -127,7 +127,7 @@ namespace XboxAPI.NET
                 return null;
             }
 
-            return response.Content;
+            return JsonConvert.DeserializeObject<XuidGamertag>(response.Content).gamertag;
         }
     }
 }

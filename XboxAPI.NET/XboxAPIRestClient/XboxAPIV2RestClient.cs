@@ -5,7 +5,7 @@ namespace XboxAPI.NET.XboxAPIRestClient
 {
     internal class XboxAPIV2RestClient : IXboxAPIV2RestClient
     {
-        private const string XboxApiBaseUrl = "https://www.xboxapi.com";
+        private const string XboxApiBaseUrl = "https://xboxapi.com";
 
         private IRestClient restClient;
 
