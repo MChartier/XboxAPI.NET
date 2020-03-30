@@ -171,7 +171,7 @@ namespace XboxAPI.NET.Tests
         private Task<XboxAPIRestResponse> readTestResponse(string fileName, 
             HttpStatusCode statusCode = HttpStatusCode.OK)
         {
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Responses\V2", fileName);
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Responses/V2", fileName);
             string content = File.ReadAllText(filePath);
             return Task.FromResult(new XboxAPIRestResponse(statusCode, content));
         }
