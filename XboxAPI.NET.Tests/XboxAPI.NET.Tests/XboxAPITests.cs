@@ -6,7 +6,6 @@ using System.Net;
 using System.Threading.Tasks;
 using XboxAPI.NET.Models.V2;
 using XboxAPI.NET.XboxAPIRestClient;
-using XboxAPI.NET.Models.V2;
 
 namespace XboxAPI.NET.Tests
 {
