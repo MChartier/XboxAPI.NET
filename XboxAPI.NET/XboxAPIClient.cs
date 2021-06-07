@@ -16,7 +16,6 @@ namespace XboxAPI.NET
     /// </summary>
     public class XboxAPIClient
     {
-        private readonly string apiKey;
         private readonly IXboxAPIV2RestClient xboxApiRestClient;
 
         /// <summary>
@@ -25,7 +24,6 @@ namespace XboxAPI.NET
         /// <param name="apiKey"></param>
         public XboxAPIClient(string apiKey)
         {
-            this.apiKey = apiKey;
             this.xboxApiRestClient = new XboxAPIV2RestClient(apiKey);
         }
 
@@ -37,7 +35,6 @@ namespace XboxAPI.NET
         /// <param name="xboxApiRestClient"></param>
         internal XboxAPIClient(string apiKey, IXboxAPIV2RestClient xboxApiRestClient = null)
         {
-            this.apiKey = apiKey;
             this.xboxApiRestClient = xboxApiRestClient ?? new XboxAPIV2RestClient(apiKey);
         }
 
