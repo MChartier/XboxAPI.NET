@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using XboxAPI.NET.Models.V2;
 using XboxAPI.NET.XboxAPIRestClient;
 
@@ -26,7 +26,7 @@ namespace XboxAPI.NET.Tests
         {
             // Setup mock rest client
             mockXboxApiRestClient = new Mock<IXboxAPIV2RestClient>();
-            this.xboxAPI = new XboxAPIClient(apiKey: null, xboxApiRestClient: mockXboxApiRestClient.Object);
+            this.xboxAPI = new XboxAPIClient(apiKey: "null", xboxApiRestClient: mockXboxApiRestClient.Object);
         }
 
         [TestMethod]

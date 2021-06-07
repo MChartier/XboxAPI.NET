@@ -1,17 +1,15 @@
-﻿using RestSharp;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using RestSharp;
 
 namespace XboxAPI.NET.XboxAPIRestClient
 {
     internal class XboxAPIV2RestClient : IXboxAPIV2RestClient
     {
-        private const string XboxApiBaseUrl = "https://xboxapi.com";
+        private readonly IRestClient restClient;
 
-        private IRestClient restClient;
-
-        public XboxAPIV2RestClient(string apiKey)
+        public XboxAPIV2RestClient(string apiKey, string baseUrl = "https://xapi.us")
         {
-            this.restClient = new RestClient(baseUrl: XboxApiBaseUrl);
+            this.restClient = new RestClient(baseUrl);
             this.restClient.AddDefaultHeader("X-AUTH", apiKey);
         }
 
